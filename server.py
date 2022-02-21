@@ -10,15 +10,17 @@ from scripts.forms import *
 from flask_bootstrap import Bootstrap
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_talisman import Talisman
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db?check_same_thread=False'
 app.config["SECRET_KEY"] = os.urandom(32)
+Talisman(app, content_security_policy=None)
 
 db.app = app
 db.init_app(app)
-# db.create_all()
+db.create_all()
 
 bootstrap = Bootstrap(app)
 
