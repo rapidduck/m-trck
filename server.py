@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db?check_same_thread=False'
 app.config["SECRET_KEY"] = os.urandom(32)
-Talisman(app, content_security_policy=None)
+# Talisman(app, content_security_policy=None)
 
 db.app = app
 db.init_app(app)
@@ -49,7 +49,6 @@ def get_sw():
 @app.route("/")
 def home():
     return render_template("index.html")
-
 
 @app.route("/profile")
 @login_required
