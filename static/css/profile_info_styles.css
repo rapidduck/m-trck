@@ -1,0 +1,64 @@
+.content-div {
+  padding: 5% 12.5%;
+}
+
+.section-div {
+  border: solid;
+  border-radius: 20px;
+  border-color: gray;
+  padding: 1rem 0.75rem;
+  padding-bottom: 0;
+  margin-bottom: 5%;
+}
+
+.section-name-div {
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  top: -2.25rem;
+  display: inline-block;
+  padding: 0 0.75rem;
+}
+
+.section-name {
+  font-weight: bold;
+}
+
+.personal-info {
+  position: relative;
+  left: 0.75rem;
+  top: -1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.section-div p button {
+  padding-bottom: 0;
+}
+
+.card {
+  text-align: center;
+  padding: 0 1rem;
+  margin-bottom: 1.25rem;
+  border: 0;
+}
+
+.card img {
+  border: ridge gray 0.35rem;
+  height: inherit;
+  width: inherit;
+}
+
+.img-div {
+  width: 13rem;
+  height: 19rem;
+  margin: 0 auto;
+}
+
+.manga-name {
+  margin: 0.75rem;
+  font-weight: bold;
+}
+
+.unsubscribe {
+  margin: 0 5%;
+}

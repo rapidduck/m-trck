@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% include "header.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html lang="en" dir="ltr">
+
+<head>
+  <title>M-TRCK Log In</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login_styles.css') }}">
+</head>
+
+<body>
+
+  <div class="content-div">
+    <div class="login-div">
+      <h2>{{type}}</h2>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+      {% endwith %}
+      {{ wtf.quick_form(form, novalidate=True) }}
+    </div>
+  </div>
+
+  {% include "footer.html" %}
+
+</body>
+
+</html>

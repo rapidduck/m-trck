@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% include "header.html" %}
+
+<html lang="en">
+
+<head>
+  <title>M-TRCK Official</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index_styles.css') }}">
+</head>
+
+<body>
+    <div class="search-div bg-dark">
+      <h1 class="website-desc">Track your manga with M-TRCK!</h1>
+      <div class=" manga-search-bar">
+        <form action="{{ url_for('search') }}" method="get" class="input-group">
+          <input type="search" class="form-control round" placeholder="Search" aria-label="Search" aria-describedby="search-addon"
+                  name="query"/>
+          <button type="submit" class="input-group-text border-0 round search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  <script src="{{ url_for('static', filename='js/register_sw.js') }}"></script>
+  {% include "footer.html" %}
+</body>
+
+</html>

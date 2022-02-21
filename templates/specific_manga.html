@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% include "header.html" %}
+
+<html lang="en" dir="ltr">
+
+<head>
+  <title>M-TRCK {{manga.title}}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/specific_manga_styles.css') }}">
+</head>
+
+<body>
+
+  <div class="content-div row">
+    <div class="col-lg-6 img-div">
+      <img src="{{ manga.thumbnail }}" alt="manga-thumbnail" class="manga-img">
+    </div>
+    <div class="manga-info-div col-lg-6">
+      <h1>{{ manga.title }}</h1>
+
+      <p>
+        <strong>Description: </strong>{{ manga.description }}
+      </p>
+
+      <p>
+        <strong>Latest chapter number: </strong>{{ manga.latest_chapter }}
+      </p>
+
+      <p>
+        <strong>Status: </strong>{{manga.status}}
+      </p>
+
+      <p>
+        <strong>Reading site: </strong>{{ manga.website }}
+      </p>
+
+      {% if current_user.is_authenticated %}
+        <button type="button" name="button" class="btn btn-outline-dark btn-lg" onclick="send_follow_request({{ manga }})">Start following this manga</button>
+      {% else %}
+        <button type="button" name="button" class="btn btn-outline-dark btn-lg disabled" onclick="send_follow_request({{ manga }})">Start following this manga</button>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/follow_manga.js') }} "></script>
+  {% include "footer.html" %}
+
+</body>
+
+</html>

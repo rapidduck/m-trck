@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+{% include "header.html" %}
+
+<html lang="en" dir="ltr">
+
+<head>
+  <title>M-TRCK Profile Info</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile_info_styles.css') }}">
+</head>
+
+<body>
+
+  <div class="content-div container-fluid">
+    <div class="section-div">
+      <div class="section-name-div">
+        <h4 class="section-name">Personal Information</h4>
+      </div>
+      <p class="personal-info">Email: {{current_user.email}}</p>
+      <p class="personal-info">Password: *********
+        <a class="btn btn-outline-dark" href="{{ url_for('change_password') }}">Change Password</a>
+      </p>
+    </div>
+
+    <div class="section-div">
+      <div class="section-name-div">
+        <h4 class="section-name">Followed manga</h4>
+      </div>
+
+      <div class="row">
+
+        {% for manga in list_of_manga %}
+          <div class="col-lg-4 card d-flex align-items-stretch">
+            <div class="img-div">
+              <img src="{{manga['thumbnail']}}" alt="manga-thumbnail">
+            </div>
+            <h5 class="manga-name">{{manga["title"]}}</h5>
+            <p>Latest chapter: {{manga["latest_chapter"]}}</p>
+            <a class="btn btn-outline-danger unsubscribe" href="{{url_for('unfollow', manga_id=manga.id) }}">Unsubscribe</a>
+          </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </div>
+
+  {% include "footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.navbar {
+  padding: 1.5% 5%;
+}
+
+.navbar-brand {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  padding: 0;
+}
+
+.navbar-nav {
+  padding-top: 1rem;
+}
+
+.nav-item {
+  padding-left: 1.25rem;
+}
+

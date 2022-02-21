@@ -1,0 +1,40 @@
+.content-div {
+  margin: 5% 10%;
+}
+
+.card {
+  text-align: center;
+  padding: 0 1rem;
+  margin-bottom: 1.25rem;
+  border: 0;
+}
+
+.card img {
+  border: ridge gray 0.35rem;
+  height: inherit;
+  width: inherit;
+}
+
+.img-div {
+  width: 13rem;
+  height: 19rem;
+  margin: 0 auto;
+}
+
+.manga-name {
+  margin-top: 0.75rem;
+}
+
+.search-results-name {
+  display: inline-block;
+}
+
+.div-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.div-link:hover {
+  color: black;
+}

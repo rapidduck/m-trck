@@ -1,0 +1,36 @@
+body {
+  background-color: #fafafa;
+}
+
+h1 {
+  color: black;
+}
+
+.content-div {
+  margin: 5% 17%;
+}
+
+.manga-info-div {
+  display: inline-block;
+}
+
+.img-div {
+  text-align: center;
+}
+
+.manga-img {
+  border: 0.5rem;
+  border-style: ridge;
+  display: inline-block;
+  border-color: gray;
+
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    padding-top: 1rem;
+  }
+}
